@@ -39,3 +39,8 @@ Animal& Animal::operator=(const Animal& obj)
         *this = obj;
     return (*this);
 }
+
+Animal::Animal( void )
+{
+    std::cout << "Animal default constructor called" << std::endl;
+}

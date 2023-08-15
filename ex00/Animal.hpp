@@ -7,6 +7,7 @@
 class Animal {
     protected:
         std::string type;
+        Animal( void );
     public:
         void makeSound( void );
         std::string getType( void );
