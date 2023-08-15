@@ -11,6 +11,10 @@ class Animal {
         void makeSound( void );
         std::string getType( void );
         void setType(std::string _type);
+        Animal( std::string _type ); //constructor
+		~Animal( void ); //destructor
+		Animal(const Animal& obj); //copy constructor
+		Animal& operator=(const Animal& obj); //copy assignment operator overload
 };
 
 #endif
