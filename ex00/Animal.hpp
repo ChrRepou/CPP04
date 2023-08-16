@@ -1,19 +1,18 @@
 #ifndef ANIMAL_H_
 #define ANIMAL_H_
 
-#include <sstream>
 #include <iostream>
 
 class Animal {
     protected:
         std::string type;
-        Animal( void );
     public:
-        void makeSound( void );
-        std::string getType( void );
+        Animal( void );
+        virtual void makeSound( void ) const;
+        std::string getType( void ) const;
         void setType(std::string _type);
         Animal( std::string _type ); //constructor
-		~Animal( void ); //destructor
+		virtual ~Animal( void ); //destructor
 		Animal(const Animal& obj); //copy constructor
 		Animal& operator=(const Animal& obj); //copy assignment operator overload
 };

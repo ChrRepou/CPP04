@@ -5,11 +5,11 @@
 
 class Cat : public Animal {
     public:
-        void makeSound( void );
+        void makeSound( void ) const;
         Cat( void ); //constructor
 		~Cat( void ); //destructor
-		Cat(const Cat& obj); //copy constructor
-		Cat& operator=(const Cat& obj); //copy assignment operator overload
+		// Cat(const Cat& obj); //copy constructor
+		// Cat& operator=(const Cat& obj); //copy assignment operator overload
 };
 
 #endif

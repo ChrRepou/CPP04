@@ -1,11 +1,11 @@
 #include "Animal.hpp"
 
-void Animal::makeSound( void )
+void Animal::makeSound( void ) const
 {
     std::cout << "mooohhhh!" << std::endl;
 }
 
-std::string Animal::getType( void )
+std::string Animal::getType( void ) const
 {
     return (this->type);
 }
@@ -40,7 +40,7 @@ Animal& Animal::operator=(const Animal& obj)
     return (*this);
 }
 
-Animal::Animal( void )
+Animal::Animal( void ) : type("animal")
 {
     std::cout << "Animal default constructor called" << std::endl;
 }
