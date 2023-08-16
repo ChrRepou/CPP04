@@ -1,8 +1,14 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 
+//void check_leaks( void )
+//{
+//	system("leaks main");
+//}
+
 int main( void )
 {
+	//atexit(check_leaks);
 	Dog basic;
     {
         Dog tmp = basic;
