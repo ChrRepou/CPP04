@@ -8,8 +8,6 @@ class Dog : public Animal {
         void makeSound( void ) const;
         Dog( void ); //constructor
 		~Dog( void ); //destructor
-		// Dog(const Dog& obj); //copy constructor
-		// Dog& operator=(const Dog& obj); //copy assignment operator overload
 };
 
 #endif
