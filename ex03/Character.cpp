@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 21:05:56 by crepou            #+#    #+#             */
-/*   Updated: 2023/08/17 22:49:46 by crepou           ###   ########.fr       */
+/*   Updated: 2023/08/17 23:49:42 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ Character::Character( std::string const & name )
 {
 	std::cout << "Character constructor is called" << std::endl;
 	this->name = name;
+	for(int i = 0; i < 4; i++)
+		this->inventory[i] = NULL;
 }
 
 Character::~Character( void )
@@ -26,6 +28,14 @@ Character::~Character( void )
 Character::Character(const Character& obj)
 {
 	std::cout << "Character copy constructor is called" << std::endl;
+	if (this != &obj)
+	{
+		for(int i = 0; i < 4; i++)
+		{
+			if (this->inventory[i] != NULL)
+				delete this->inventory[i];
+		}
+	}
 	*this = obj;
 }
 
@@ -33,7 +43,16 @@ Character& Character::operator=(const Character& obj)
 {
 	std::cout << "Character copy assignment operator overload called" << std::endl;
     if (this != &obj)
-		*this = obj;
+	{
+		for(int i = 0; i < 4; i++)
+		{
+			if (this->inventory[i] != NULL)
+				delete this->inventory[i];
+			this->inventory[i] = obj.inventory[i];
+			this->name = obj.getName();
+			this->idx = obj.idx;
+		}
+	}
     return (*this);
 }
 
