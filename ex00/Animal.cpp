@@ -1,46 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/18 13:21:34 by crepou            #+#    #+#             */
+/*   Updated: 2023/08/18 13:22:36 by crepou           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 
 void Animal::makeSound( void ) const
 {
-    std::cout << "mooohhhh!" << std::endl;
+	std::cout << "mooohhhh!" << std::endl;
 }
 
 std::string Animal::getType( void ) const
 {
-    return (this->type);
+	return (this->type);
 }
 
 void Animal::setType(std::string _type)
 {
-    this->type = _type;
+	this->type = _type;
 }
 
 Animal::Animal( std::string _type )
 {
-    std::cout << "Animal constructor called" << std::endl;
-    this->setType(_type);
+	std::cout << "Animal constructor called" << std::endl;
+	this->setType(_type);
 }
 
 Animal::~Animal( void )
 {
-    std::cout << "Animal destructor called" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 
 Animal::Animal(const Animal& obj)
 {
-    std::cout << "Animal copy constructor called" << std::endl;
-    *this = obj;
+	std::cout << "Animal copy constructor called" << std::endl;
+	*this = obj;
 }
 
 Animal& Animal::operator=(const Animal& obj)
 {
-    std::cout << "Animal copy assignment operator overload called" << std::endl;
-    if (this != &obj)
-        *this = obj;
-    return (*this);
+	std::cout << "Animal copy assignment operator overload called" << std::endl;
+	if (this != &obj)
+		*this = obj;
+	return (*this);
 }
 
 Animal::Animal( void ) : type("animal")
 {
-    std::cout << "Animal default constructor called" << std::endl;
+	std::cout << "Animal default constructor called" << std::endl;
 }
