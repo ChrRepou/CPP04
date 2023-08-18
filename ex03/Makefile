@@ -2,9 +2,9 @@ CC = c++
 CFLAGS  = -g -Wall -Wextra -Werror -std=c++98
 
 TARGET = main
-SOURCES = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
-OBJ = main.o Animal.o Cat.o Dog.o Brain.o
-HEADER_F = Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
+SOURCES = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp ICharacter.cpp IMateriaSource.cpp MateriaSource.cpp
+OBJ = main.o AMateria.o Character.o Cure.o Ice.o ICharacter.o IMateriaSource.o MateriaSource.o
+HEADER_F = AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
 
 all: exec
 
@@ -14,23 +14,26 @@ exec: $(OBJ)
 $(TARGET).o: $(TARGET).cpp $(HEADER_F)
 	$(CC) $(CFLAGS) -c $(TARGET).cpp
 
-Animal.o: Animal.cpp $(HEADER_F)
-	$(CC) $(CFLAGS) -c Animal.cpp
+AMateria.o: AMateria.cpp $(HEADER_F)
+	$(CC) $(CFLAGS) -c AMateria.cpp
 
-Cat.o: Cat.cpp $(HEADER_F)
-	$(CC) $(CFLAGS) -c Cat.cpp
+Character.o: Character.cpp $(HEADER_F)
+	$(CC) $(CFLAGS) -c Character.cpp
 
-Dog.o: Dog.cpp $(HEADER_F)
-	$(CC) $(CFLAGS) -c Dog.cpp
+Cure.o: Cure.cpp $(HEADER_F)
+	$(CC) $(CFLAGS) -c Cure.cpp
 
-Brain.o: Brain.cpp $(HEADER_F)
-	$(CC) $(CFLAGS) -c Brain.cpp
+Ice.o: Ice.cpp $(HEADER_F)
+	$(CC) $(CFLAGS) -c Ice.cpp
 
-WrongAnimal.o: WrongAnimal.cpp $(HEADER_F)
-	$(CC) $(CFLAGS) -c WrongAnimal.cpp
+ICharacter.o: ICharacter.cpp $(HEADER_F)
+	$(CC) $(CFLAGS) -c ICharacter.cpp
 
-WrongCat.o: WrongCat.cpp $(HEADER_F)
-	$(CC) $(CFLAGS) -c WrongCat.cpp
+IMateriaSource.o: IMateriaSource.cpp $(HEADER_F)
+	$(CC) $(CFLAGS) -c IMateriaSource.cpp
+
+MateriaSource.o: MateriaSource.cpp $(HEADER_F)
+	$(CC) $(CFLAGS) -c MateriaSource.cpp
 
 clean:
 	$(RM) main $(OBJ)

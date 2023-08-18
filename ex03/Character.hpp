@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 20:54:24 by crepou            #+#    #+#             */
-/*   Updated: 2023/08/17 21:12:53 by crepou           ###   ########.fr       */
+/*   Updated: 2023/08/18 12:33:44 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Character : public ICharacter {
 	private:
 		AMateria *inventory[4];
 		std::string name;
-		unsigned int idx = 0;
+		int idx;
 	public:
 		Character(std::string const & name); //constructor
 		~Character( void ); //destructor

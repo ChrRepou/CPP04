@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 16:59:47 by crepou            #+#    #+#             */
-/*   Updated: 2023/08/16 16:59:48 by crepou           ###   ########.fr       */
+/*   Updated: 2023/08/18 12:55:05 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 Ice::Ice( void ) : AMateria("ice")
 {
-	std::cout << "Ice constructor is called" << std::endl;
+	//std::cout << "Ice constructor is called" << std::endl;
 }
 
 Ice::~Ice( void )
 {
-	std::cout << "Ice destructor is called" << std::endl;
+	//std::cout << "Ice destructor is called" << std::endl;
 }
 
 Ice::Ice(const Ice& obj)
 {
-	std::cout << "Ice copy constructor is called" << std::endl;
+	//std::cout << "Ice copy constructor is called" << std::endl;
 	*this = obj;
 }
 
 Ice& Ice::operator=(const Ice& obj)
 {
-	std::cout << "Ice copy assignment operator overload called" << std::endl;
+	//std::cout << "Ice copy assignment operator overload called" << std::endl;
     if (this != &obj)
 		*this = obj;
     return (*this);

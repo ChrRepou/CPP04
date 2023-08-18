@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 16:34:59 by crepou            #+#    #+#             */
-/*   Updated: 2023/08/16 16:47:12 by crepou           ###   ########.fr       */
+/*   Updated: 2023/08/18 12:32:18 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define AMATERIA_H_
 
 #include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria {
 	protected:

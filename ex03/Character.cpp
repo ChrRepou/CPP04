@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 21:05:56 by crepou            #+#    #+#             */
-/*   Updated: 2023/08/17 23:49:42 by crepou           ###   ########.fr       */
+/*   Updated: 2023/08/18 12:56:07 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,26 @@
 
 Character::Character( std::string const & name )
 {
-	std::cout << "Character constructor is called" << std::endl;
+	//std::cout << "Character constructor is called" << std::endl;
 	this->name = name;
 	for(int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
+	this->idx = 0;
 }
 
 Character::~Character( void )
 {
-	std::cout << "Character destructor is called" << std::endl;
+	//std::cout << "Character destructor is called" << std::endl;
+	for(int i = 0; i < 4; i++)
+	{
+		if (this->inventory[i] != NULL)
+			delete this->inventory[i];
+	}
 }
 
 Character::Character(const Character& obj)
 {
-	std::cout << "Character copy constructor is called" << std::endl;
+	//std::cout << "Character copy constructor is called" << std::endl;
 	if (this != &obj)
 	{
 		for(int i = 0; i < 4; i++)
@@ -41,7 +47,7 @@ Character::Character(const Character& obj)
 
 Character& Character::operator=(const Character& obj)
 {
-	std::cout << "Character copy assignment operator overload called" << std::endl;
+	//std::cout << "Character copy assignment operator overload called" << std::endl;
     if (this != &obj)
 	{
 		for(int i = 0; i < 4; i++)
@@ -68,22 +74,22 @@ void Character::equip(AMateria* m)
 		this->inventory[this->idx] = m;
 		this->idx++;
 	}
-	else
-		std::cout << "Character: " << this->getName() << " has a full inventory!\n";
+	//else
+	//	std::cout << "Character: " << this->getName() << " has a full inventory!\n";
 }
 
 void Character::unequip(int idx)
 {
 	if (idx > -1 && idx < 4 && idx <= this->idx)
 		this->inventory[idx] = NULL;
-	else
-		std::cout << "The index is wrong\n";
+	//else
+	//	std::cout << "The index is wrong\n";
 }
 
 void Character::use(int idx, ICharacter& target)
 {
 	if (idx > -1 && idx < 4 && idx <= this->idx)
 		this->inventory[idx]->use(target);
-	else
-		std::cout << "The index is wrong\n";
+//	else
+//		std::cout << "The index is wrong\n";
 }
