@@ -6,19 +6,19 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 16:30:58 by crepou            #+#    #+#             */
-/*   Updated: 2023/08/18 12:50:56 by crepou           ###   ########.fr       */
+/*   Updated: 2023/08/18 13:01:46 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//void check_leaks( void )
-//{
-//	system("leaks main");
-//}
 
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "MateriaSource.hpp"
 #include "Character.hpp"
+
+//void check_leaks( void )
+//{
+//	system("leaks main");
+//}
 
 int main( void )
 {

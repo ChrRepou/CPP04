@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 00:00:18 by crepou            #+#    #+#             */
-/*   Updated: 2023/08/18 12:53:28 by crepou           ###   ########.fr       */
+/*   Updated: 2023/08/18 13:01:03 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ MateriaSource::MateriaSource( void )
 MateriaSource::~MateriaSource( void )
 {
 	//std::cout << "MateriaSource destructor is called" << std::endl;
+	for(int i = 0; i < 4; i++)
+	{
+		if(this->memory[i] != NULL)
+			delete this->memory[i];
+	}
 }
 
 MateriaSource::MateriaSource(const MateriaSource& obj)
